@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 </head>
 <body onload = "focusOnInput()">
+  <body>
   <header>
     <div id="header-container" class="header-container">
       <span>Register for</span>
@@ -25,7 +26,7 @@
           <legend>Basic Info</legend>
           
           <label for="name">Name: <span class="asterisk">*</span>
-            <input type="text" id="name" name="user-name" class="error-border">
+            <input type="text" id="name" name="user-name" class="error-border"> <!--autofocus-->
             <span id="name-hint" class="name-hint hint">Name field cannot be blank</span>
           </label>
           
@@ -47,7 +48,7 @@
             <option value="other">Other</option>  
           </select> 
           
-          <input type="text" name="other-job-role" id="other-job-role" class="other-job-role" placeholder="Other job role?">
+          <input type="text" name="other-job-role" id="other-job-role" class="other-job-role" style="display:none" placeholder="Other job role?">
         </fieldset>
         
         <fieldset class="shirts">
