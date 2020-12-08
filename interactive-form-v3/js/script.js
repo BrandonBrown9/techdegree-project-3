@@ -46,8 +46,5 @@ const colorEleOption2 = document.getElementsByClassName("heart js");
 console.log(colorEle.length);
 // console.log(colorEleOption1);
 
-//two truths and a lie
-    // I played electric guitar in a band and performed several times in Atlanta
-    // I got to meet my favorite band in Atlanta in 2018
-    // I am a  die hard Steelers fan (11-0)
+
     
