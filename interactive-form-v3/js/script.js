@@ -30,11 +30,13 @@ const colorEleOption2 = document.getElementsByClassName("heart js");
                 colorEle.disabled = false;
                 for (let i = 0; i < colorEleOption2.length; i++) {
                     colorEleOption2[i].disabled = true;
+                    colorEleOption1[i].disabled = false;
                 }
             } else if (designEle.value === "heart js") {
             colorEle.disabled = false;
             for (let i = 0; i < colorEleOption1.length; i++) {
                 colorEleOption1[i].disabled = true;
+                colorEleOption2[i].disabled = false;
             }
         }
     })
