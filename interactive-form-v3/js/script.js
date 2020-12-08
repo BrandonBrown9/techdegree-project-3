@@ -5,6 +5,11 @@ const designEle = document.getElementById("design");
 const colorEle = document.getElementById("color");
 const colorEleOption1 = document.getElementsByClassName("js puns");
 const colorEleOption2 = document.getElementsByClassName("heart js");
+const regActivities = document.getElementById("activities");
+const activitiesCost = document.getElementById("activities-cost");
+const dataCost = regActivities.getAttribute("data-cost");
+
+let totalCost = 0;
 
 
 // Methods
@@ -41,10 +46,14 @@ const colorEleOption2 = document.getElementsByClassName("heart js");
         }
     })
 
+    //Register for Activities component
+    regActivities.addEventListener("change", function() {
+    
+        console.log(dataCost);
+    })
+
 // Method Calls
 
-console.log(colorEle.length);
-// console.log(colorEleOption1);
 
 
     
