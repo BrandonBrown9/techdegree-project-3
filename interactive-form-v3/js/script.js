@@ -7,7 +7,6 @@ const colorEleOption1 = document.getElementsByClassName("js puns");
 const colorEleOption2 = document.getElementsByClassName("heart js");
 const regActivities = document.getElementById("activities");
 const activitiesCost = document.getElementById("activities-cost");
-const dataCost = regActivities.getAttribute("data-cost");
 
 let totalCost = 0;
 
@@ -47,13 +46,13 @@ let totalCost = 0;
     })
 
     //Register for Activities component
-    regActivities.addEventListener("change", function() {
-    
-        console.log(dataCost);
+    regActivities.addEventListener("change", function (e) {
+        const dataCost = e.target.getAttribute('data-cost');
+            let newDataCost = +dataCost;
+        
+        //console.log(dataCost);
     })
 
 // Method Calls
-
-
 
     
