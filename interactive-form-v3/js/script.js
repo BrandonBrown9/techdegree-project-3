@@ -7,6 +7,7 @@ const colorEleOption1 = document.getElementsByClassName("js puns");
 const colorEleOption2 = document.getElementsByClassName("heart js");
 const regActivities = document.getElementById("activities");
 const activitiesCost = document.getElementById("activities-cost");
+let totalCost = 0;
 
 // Methods
 //Focus on Input Field onPageLoad
@@ -47,14 +48,13 @@ regActivities.addEventListener("change", function (e) {
   const dataCost = e.target;
   const newDataCost = +dataCost.getAttribute("data-cost");
   //   let newDataCost = +dataCost; // transforms dataCost STRING to newDataCost number
-  let totalCost = 0;
 
   if (dataCost.checked === true) {
     totalCost += newDataCost;
-    activitiesCost.textContent = totalCost;
+    activitiesCost.textContent = `Total: $${totalCost}`;
   } else {
     totalCost -= newDataCost;
-    activitiesCost.textContent = totalCost;
+    activitiesCost.textContent = `Total: $${totalCost}`;
   }
 });
 
