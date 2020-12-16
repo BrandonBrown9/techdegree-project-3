@@ -8,6 +8,7 @@ const colorEleOption2 = document.getElementsByClassName("heart js");
 const regActivities = document.getElementById("activities");
 const activitiesCost = document.getElementById("activities-cost");
 const hidden = document.getElementById("hidden");
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
 let totalCost = 0;
 
 // Methods
@@ -50,7 +51,6 @@ designEle.addEventListener("change", function (color) {
 regActivities.addEventListener("change", function (e) {
   const dataCost = e.target;
   const newDataCost = +dataCost.getAttribute("data-cost");
-  const dayAndTime = this.getAttribute("data-day-and-time");
 
   //   let newDataCost = +dataCost; // transforms dataCost STRING to newDataCost number
 
@@ -60,6 +60,16 @@ regActivities.addEventListener("change", function (e) {
   } else {
     totalCost -= newDataCost;
     activitiesCost.textContent = `Total: $${totalCost}`;
+  }
+
+  for (let i = 0; i < checkboxes.length; i++) {
+    const activity = checkboxes[i].getAttribute("data-day-and-time");
+    const eventTime = dataCost.getAttribute("data-day-and-time");
+    if (checkboxes[i] !== dataCost && activity === eventTime) {
+      dataCost.checked
+        ? (checkboxes[i].disabled = true)
+        : (checkboxes[i].disabled = false);
+    }
   }
 });
 
