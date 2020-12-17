@@ -9,6 +9,10 @@ const regActivities = document.getElementById("activities");
 const activitiesCost = document.getElementById("activities-cost");
 const hidden = document.getElementById("hidden");
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
+const payment = (document.getElementById("payment").value = "credit-card");
+const paymentSelection = document.getElementById("payment");
+const paypal = document.getElementById("paypal");
+const bitcoin = document.getElementById("bitcoin");
 let totalCost = 0;
 
 // Methods
@@ -70,6 +74,20 @@ regActivities.addEventListener("change", function (e) {
         ? (checkboxes[i].disabled = true)
         : (checkboxes[i].disabled = false);
     }
+  }
+});
+
+//Payment Display Component
+paymentSelection.addEventListener("change", function () {
+  if (paymentSelection.value == "paypal") {
+    paypal.style.display = "block";
+    bitcoin.style.display = "none";
+  } else if (paymentSelection.value == "bitcoin") {
+    bitcoin.style.display = "block";
+    paypal.style.display = "none";
+  } else if (paymentSelection.value == "credit-card") {
+    bitcoin.style.display = "none";
+    paypal.style.display = "none";
   }
 });
 
